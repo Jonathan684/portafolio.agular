@@ -37,9 +37,5 @@ export class InfoPaginaService {
      console.log( resp);
     });
   }
-  
-
-
-  
 }
 
