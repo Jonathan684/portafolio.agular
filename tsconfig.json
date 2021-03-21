@@ -16,6 +16,7 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
+    "strictPropertyInitialization": false,/*Cambien esto para no ser estricto en inicializar*/
     "lib": [
       "es2018",
       "dom"

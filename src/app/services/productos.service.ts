@@ -25,7 +25,8 @@ export class ProductosService {
 
     return new Promise<void>(  ( resolve, reject ) => {
 
-      this.http.get('https://angular-html-25cf9.firebaseio.com/productos_idx.json')
+      this.http.get('https://angular-html-815df-default-rtdb.firebaseio.com/productos_idx.json')
+     
           .subscribe( (resp: any) => {
             this.productos = resp;
             this.cargando = false;
@@ -35,10 +36,13 @@ export class ProductosService {
     });
 
   }
-
+ /*
+ Hace una peticion al url que pegamos.
+ Este metodo devuelve cada producto que esta en la bases de datos en el rest de backend
+ */
   getProducto( id: string ) {
-
-    return this.http.get(`https://angular-html-25cf9.firebaseio.com/productos/${ id }.json`);
+   /*regreso un observable*/ 
+    return this.http.get(`https://angular-html-815df-default-rtdb.firebaseio.com/productos/${ id }.json`);
 
   }
 

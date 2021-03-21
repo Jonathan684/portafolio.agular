@@ -3,9 +3,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { InfoPagina } from '../interfaces/info-pagina.interface';
 
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class InfoPaginaService {
  
   info: InfoPagina = {};
@@ -28,6 +30,8 @@ export class InfoPaginaService {
          
        });
   }
+
+
   private cargarEquipo(){
      
     this.http.get('https://angular-html-815df-default-rtdb.firebaseio.com/equipo.json')
