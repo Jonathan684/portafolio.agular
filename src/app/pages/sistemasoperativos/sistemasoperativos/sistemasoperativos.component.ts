@@ -26,9 +26,7 @@ ngOnInit(){
           this.productoService.getProducto(parametros['id'])
                 .subscribe( (producto: ProductoDescripcion) => {
                   this.id = parametros['id'];
-                  //console.log("ESTE ES ..>"+ producto.desc1
-                  //);
-
+                  this.producto = producto;
                 });
         });
       }

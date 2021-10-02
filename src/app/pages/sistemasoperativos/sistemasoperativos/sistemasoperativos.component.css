@@ -1,3 +1,6 @@
+.titulo1{
+  color:#2ECC71;
+}
 .principal{
   color:#52A8D0;
 }
@@ -13,4 +16,25 @@
   text-align : center;
   /*color:chocolate;*/
   border: 3px solid darkblue;
+}
+.subtitulo3{
+  /*color:chocolate;*/
+  background-color:#7fffd4;
+  border: 3px solid darkblue;
+  width:max-content;
+}
+#objetivos{
+  border: 3px solid darkblue;
+  width: max-content;
+}
+textarea#texto{
+  margin: 20px;
+  
+  resize: none;
+  max-height: 2000px;
+  max-width: 2000px;
+  min-width: 700px;
+  min-height:1800px;
+  text-align: justify;
+  white-space: normal;
 }

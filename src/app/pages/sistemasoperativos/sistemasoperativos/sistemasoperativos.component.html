@@ -3,58 +3,152 @@
   <header [ngStyle]="{ 'background-image' : 'url(assets/productos/'+ id + '/main.jpg)' }"
     class="rk-portfolio-cover  item-inside-1">
     <div class="item-inside__meta">
-      <h1 class="ae-u-bolder rk-portfolio-title principal "  >{{producto.producto}}</h1>
+      <h1 class="ae-u-bolder rk-portfolio-title titulo1"  >{{producto.producto}}</h1>
       <p class="ae-theta rk-portfolio-category secundario">{{producto.categoria}}</p>
     </div>
   </header>
-
-
-
   <div class="ae-container-fluid">
     <div class="ae-grid ae-grid--collapse rk-portfolio-info ">
       <div class="ae-grid__item item-lg-8 item-sm--center au-xs-ta-center au-lg-ta-left">
         <h2 class="rk-portfolio-inner-title " >{{producto.subtitulo0}} </h2>
       </div>
-      <!--
-      <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right rk-portfolio-details">
-        <p class="rk-portfolio-inner-client "><span class="ae-lambda">Client: </span><span class="ae-u-bolder">Agency Design Studio</span></p>
-        <p class="au-underline rk-portfolio-inner-website "><a href="#0" class="ae-kappa">www.agencydesign.com</a></p>
-        <p class="ae-kappa ae-u-bold rk-portfolio-inner-date ">12 August, 2015</p>
-      </div>
-      -->
     </div>
   </div>
-  
   <div class="ae-container-fluid ae-container-fluid--inner rk-portfolio--inner">
-    <div class="ae-grid ae-grid--collapse au-xs-ptp-1">
+    <div class="ae-grid ae-grid--collapse au-xs-ptp-1 ">
       
       <!-- <div class="ae-grid__item item-lg-5 au-lg-ptp-1">
       item-lg-5 -> esta clase divide el parrafo en dos columnas  
       -->
         <div class="ae-grid__item au-lg-ptp-1">
-        <h4 class="ae-u-bolder subtitulo1 ">{{ producto.subtitulo1 }}</h4>
-        <h4 class="ae-u-bolder subtitulo3">{{ producto.subtitulo3 }}</h4>
-        <p class="ae-eta"> {{ producto.desc1 }} </p>
+          <h4 class="ae-u-bolder subtitulo1 ">{{ producto.subtitulo1 }}</h4>
+          <h4 class="ae-u-bolder subtitulo3" >{{ producto.subtitulo2 }}</h4>
+          <h2 id="objetivos">Objetivos</h2>
+          <p>Con el desarrollo del siguiente Trabajo Práctico (TP), se busca:</p>
+          <ul >
+            <li>Utilizar mecanismos de creación de Procesos.</li>
+            <li>Utilizar mecanismos de concurrencia e IPC.</li>
+            <li>Diseñar un intérprete de línea de comandos al estilo Bourne shell.</li>
+          </ul>
+          <h2 id="introduccion">Introducción</h2>
+          <p>Este trabajo práctico consta en la elaboración de un programa en lenguaje
+          <strong>C</strong> sobre <strong>GNU/Linux</strong>.
+           El trabajo se divide en soluciones incrementales.
+          </p>
+          <h2 id="command-line-prompt">Command line prompt</h2>
+
+          <p><em>myshell</em> debe contar con un prompt que contenga el camino al directorio actual. e.g.: </p>
+          <pre><code class="lang-Bash">username<span class="hljs-variable">@groupname</span>
+          <span class="hljs-symbol">:~</span>$
+          </code>
+          </pre>
+          <h2 id="internal-commands">Internal commands</h2>
+          <p><em>myshell</em> debe soportar los siguientes comandos internos:</p>
+          <ul>
+            <li><strong>cd (directorio)</strong>:
+            cambia el directorio actual a (directorio). 
+            Si directorio no está presente,
+            reporta el directorio actual. 
+            Si el directorio no existe se debe imprimir un error apropiado.
+            Además, este comando debe cambiar la variable de entorno PWD.</li>
+            <li><strong>clr</strong> : limpia la pantalla</li>
+            <li><strong>echo comentario</strong>: muestra comentario en la pantalla seguido por una línea nueva. (multiple espacios/tabs pueden ser reducidos a un espacio).</li>
+            <li><strong>quit</strong>:  cierra myshell</li>
+          </ul>
+          <p>Program invocation
+            Entradas del usuario que no sean comandos internos deben ser interpretados
+            como la invocación de un programa. 
+            La misma tiene que ser realizada mediante fork y exec.</p>
+          <p>Batch File
+            myshell debe ser capaz de tomar sus comandos a 
+            ejecutar desde un archivo. Por ejemplo, la shell 
+            puede ser invocada con un argumento myshell batchfile. 
+            El batchfile contiene un conjunto de comandos de línea para que la shell ejecute.</p>
+          <p>Cuando se alcance el fin de archivo (EOF), myshell debe cerrarse.</p>
+          <p>Notar que si myshell se ejecuta sin argumento (./myshell), se tiene que mostrar el
+            command prompt y se debe esperar a comandos del usuario vía stdin.</p>
+          <p>&nbsp;</p>
+          <h2>Batch File</h2>
+          <p><em>myshell</em><span>&nbsp;</span>debe ser capaz de tomar sus comandos a ejecutar desde un archivo. Por ejemplo, la<span>&nbsp;</span><em>shell</em><span>&nbsp;</span>puede ser invocada con un argumento<span>&nbsp;</span><strong>myshell batchfile</strong>. El<span>&nbsp;</span><em>batchfile</em><span>&nbsp;</span>contiene un conjunto de comandos de l&iacute;nea para que la shell ejecute.</p>
+          <p>Cuando se alcance el fin de archivo (<em>EOF</em>),<span>&nbsp;</span><em>myshell</em><span>&nbsp;</span>debe cerrarse.</p>
+          <p>Notar que si<span>&nbsp;</span><em>myshell</em><span>&nbsp;</span>se ejecuta sin argumento (./myshell), se tiene que mostrar el command prompt y se debe esperar a comandos del usuario v&iacute;a stdin.</p>
+          <p></p>
+          <p>&nbsp;</p>
+          <h2>I/O redirection</h2>
+          <p>Se debe soportar redirecci&oacute;n de entrada/salida en stdin y/o stdout. Por ejemplo:</p>
+          <div class="highlight highlight-source-shell position-relative overflow-auto">
+          <pre>program arg1 ar2 <span class="pl-k">&lt;</span> inputfile <span class="pl-k">&gt;</span> outputfile</pre>
+          </div>
+          <p>Ejecuta la el programa<span>&nbsp;</span><em>program</em><span>&nbsp;</span>con los arguments<span>&nbsp;</span><em>arg1</em>,<span>&nbsp;</span><em>arg2</em>. stdin es reemplazado por inputfile y stdout por outputfile.</p>
+          <p>La redirecci&oacute;n debe funcionar para el comando interno<span>&nbsp;</span><strong>echo</strong>.</p>
+          <h2>Background execution</h2>
+          <p>Un ampersand<span>&nbsp;</span><strong>&amp;</strong><span>&nbsp;</span>al final de la l&iacute;nea de comando indica que la<span>&nbsp;</span><em>shell</em><span>&nbsp;</span>debe retornar al prompt inmediatamente luego de lanzar al programa a ejecutarse en background.</p>
+          <p>Cuando se comienza un trabajo en background, se debe imprimir un mensaje indicando su Trabajo y su ID de proceso.</p>
+          <div class="highlight highlight-source-shell position-relative overflow-auto">
+          <pre>[<span class="pl-k">&lt;</span>job id<span class="pl-k">&gt;</span>] <span class="pl-k">&lt;</span>process id<span class="pl-k">&gt;</span></pre>
+          </div>
+          <p>Ejemplo:</p>
+          <div class="highlight highlight-source-shell position-relative overflow-auto">
+          <pre>$ <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>hola<span class="pl-pds">'</span></span> <span class="pl-k">&amp;</span>
+          [1] 10506
+          hola</pre>
+          </div>
+          <p>Cuando un trabajo es parado (stopped) por una se&ntilde;al, se debe imprimir el siguiente mensaje:</p>
+          <div class="highlight highlight-source-shell position-relative overflow-auto">
+          <pre>[<span class="pl-k">&lt;</span>job id<span class="pl-k">&gt;</span>] <span class="pl-k">&lt;</span>process id<span class="pl-k">&gt;</span> suspended by signal <span class="pl-k">&lt;</span>signal number<span class="pl-k">&gt;</span></pre>
+          </div>
+          <p>Cuando un trabajo es continuado (resumed) por la se&ntilde;al<span>&nbsp;</span><strong>SIGCONT</strong>, se debe imprimir el siguiente mensaje:</p>
+          <div class="highlight highlight-source-shell position-relative overflow-auto">
+          <pre>[<span class="pl-k">&lt;</span>job id<span class="pl-k">&gt;</span>] <span class="pl-k">&lt;</span>process id<span class="pl-k">&gt;</span> resumed</pre>
+          </div>
+          <p>Finalmente, gestionar correctamente los procesos lanzados en background para evitar la generaci&oacute;n de procesos zombies.</p>
+          <h2>Signal Handling</h2>
+          <p>Si se ingresa alguna de las combinaciones CTRL-C, CTRL-Z o CTRL-, las se&ntilde;ales resultantes (SIGINT, SIGTSTP, SIGQUIT respectivamente) deben ser enviadas al trabajo (job) en ejecuci&oacute;n de primer plano en vez de a<span>&nbsp;</span><em>myshell</em>. Si no hay un trabajo (job) en ejecuci&oacute;n de primer plano, no debe suceder nada.</p>
+          <h2>Pipe</h2>
+          <p><em>myshell</em><span>&nbsp;</span>provee la funcionalidad de un pipe a trav&eacute;s del operador &lsquo;|&rsquo; (pipe). El mismo conecta la salida est&aacute;ndar del proceso lazando por el comando de la izquierda del pipe con la entrada est&aacute;ndar del proceso que se genera con el comando a la derecha del pipe.</p>
+          <p>Ejemplos:</p>
+          <div class="highlight highlight-source-shell position-relative overflow-auto">
+          <pre>$ last <span class="pl-k">&lt;</span>username<span class="pl-k">&gt;</span> <span class="pl-k">|</span> wc -l
+          $ ps aux <span class="pl-k">|</span> grep firefox
+          $ grep bash /etc/passwd <span class="pl-k">|</span> cut -d &ldquo;:&rdquo; -f 1 <span class="pl-k">|</span> sort -r</pre>
+          </div>
+          <h3>Responder:</h3>
+          <p>&iquest;D&oacute;nde se encuentran los pipes en el filesystem, qu&eacute; atributos tienen?</p>
+          <h2>Criterios de Correcci&oacute;n</h2>
+          <ul>
+          <li>Se debe compilar el c&oacute;digo con los flags de compilaci&oacute;n: -Wall -Pedantic</li>
+          <li>Dividir el c&oacute;digo en m&oacute;dulos de manera juiciosa.</li>
+          <li>Estilo de c&oacute;digo.</li>
+          <li>El c&oacute;digo no debe contener errores, ni warnings.</li>
+          <li>El c&oacute;digo no debe contener errores de cppcheck.</li>
+          <li>myshell no debe finalizar dejando procesos zombies.</li>
+          </ul>
+          <h2>Qu&eacute; se debe Entregar</h2>
+          <ul>
+          <li>Informe del desarrollo del proyecto.</li>
+          <li>C&oacute;digo (funcionando bajo las especificaciones dadas y bajo cualquier caso de test de par&aacute;metros de entrada).</li>
+          <li>Makefile</li>
+          </ul>
+          <p></p>
+          <h4 class="subtitulo3">Informe</h4>
+          <form>
+            <textarea readonly id=texto>
+            Introducción:
+            El intérprete de comandos resulta la interfaz más tradicional de un sistema operativo tipo UNIX. Este programa que se ejecuta en modo usuario, funciona en cualquier UNIX que soporte interfaces de caracteres y su función es aceptar comandos ingresados por entrada estándar (teclado), parsearlos, ejecutar la orden y mostrar el resultado en la salida estándar (pantalla), para luego volver a repetir el proceso. En este Trabajo Practico se elabora un programa en lenguaje C sobre GNU/Linux.El mismo consiste en varias secciones que se explican a continuacion. El programa comienza ejecutando el make (makefile), luego se debe decidir si la aplicaciòn se debe ejecutar desde un archivo batchfile o desde el prompt que se ha creado para interpretar los comando ingresados. Myshell permite tener el control de la consola en la cual se pueden utilizar los siguientes comandos:
+              "cd" para avanzar o retroceder en un directorio, partiendo del directorio actual;
+              "clr" limpia la pantalla;
+              "echo comentario" imprime el comentario, y
+              "quit" cierra la shell.
+              Cuando se ingresa un comando que no es uno de los nombrados anteriormente se crea
+              un proceso y se intenta ejecutar el comando ingresado. El comando (que se considera un programa a ejecutar) puede estar en varios lugares. Primero se busca el programa en el path actual, para ello se le pasa a execv el path actual y los argumentos del programa, en caso de dar error se ejecutará execvp, el cual busca en la ruta absoluta dentro del árbol del FyleSystem. En caso de que la ejecución del programa tenga éxito, pueden suceder dos alternativas; por una parte, se utiliza un wait para que el programa padre espere por la finalización del hijo; en la segunda se utiliza el wait, pero no se espera hasta que termine para que el padre pueda realizar otra tarea. Para que esto último suceda, se debe agregar al comando el caracter "&". Otra de las utilidades que ofrece myshell es poder redireccionar la salida estándar utilizando los caracteres ">". De esta manera, cuando se ejecute un programa, en vez de utilizar la salida estándar (consola), se puede hacer que se redireccione hacia un archivo, por ejemplo. También se puede redireccionar la entrada estándar. En este caso, se debe utilizar el carácter "<" para tomar los valores desde un archivo pasado por el lado derecho del carácter. Por ejemplo, la sintaxis sería "programa < comando.txt" ; en este caso, el programa que necesita valores para funcionar los toma desde comando.txt, y no de la consola (entrada estándar). También, myshell funciona utilizando las señales. Para este caso, presionando las teclas de Ctrl + C , Ctrl + Z o Ctrl + \ , se activa el manejador de señales en el padre, el cual recibe la señal y mediante la funcion kill se la envía a los procesos hijo. Para lograr esto, se debió cambiar de grupo a los hijos, ya que si no se hacía eso, todos recibían las señales, tanto los procesos hijos como el padre. Por último, myshell puede conectar dos procesos mediante un pipe, el cual permite que la salida estándar de un proceso sea la entrada estándar de otro proceso. Por ejemplo, la función 'last "username" | wc -l' , se lleva a cabo mediante la funcion pipe(). Para finalizar myshell se debe ingresar el comando "fin", el cual recorre una lista de procesos creados y les envía la señal SIGTERM la cual permite que el proceso cierre conexiones y archivos, limpie sus propios búfer, y luego termina el proceso padre mediante un exit(EXIT_SUCCESS).
+              
+              ¿Dónde se encuentran los pipes en el filesystem, que atributos tienen?
+              int tuberia [2]
+              Para crear las tuberías se emplea la función pipe(), que abre dos file descriptors y almacena su valor en los dos enteros que contiene el array de fd , el primer file descriptor es abierto como O_RDONLY, es decir, sólo puede ser empleado para lecturas. El segundo, se abre como O_WRONLY, limitando su uso a la escritura; de esta manera se asegura que el pipe sea de un solo sentido: por un extremo se escribe, y por el otro se lee - nunca al revés-.
+              </textarea>
+            </form>
+        
         </div>
-      <!--
-      <div class="ae-grid__item item-lg-6 item-lg--offset-1">
-        <img src="assets/productos/{{id}}/pic-1.jpg" alt="Urku Portfolio">
-      </div>
-      -->
-    </div>
-    <div class="ae-grid ae-grid--collapse">
-      <!--
-      <div class="ae-grid__item item-lg-8">
-        <img src="assets/productos/{{id}}/pic-2.jpg" alt="Urku Portfolio">
-      </div>
-      -->
-      <!-- <div class="ae-grid__item item-lg-3 item-lg--offset-1 au-lg-ptp-1">-->
-      <div class=" ">
-        <p> {{ producto.desc2 }} </p>
-        <p class="ae-u-bolder">
-        {{ producto.subtitulo2 }}
-      </p>
-      </div>
     </div>
   </div>
 </section>
