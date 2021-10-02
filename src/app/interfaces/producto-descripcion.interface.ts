@@ -8,4 +8,5 @@ export interface ProductoDescripcion {
   subtitulo0?: string;
   subtitulo1?: string;
   subtitulo2?: string;
+  subtitulo3?: string;
 }

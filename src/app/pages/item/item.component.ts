@@ -31,11 +31,8 @@ ngOnInit() {
                             .subscribe( (producto: ProductoDescripcion) => {
                               this.id = parametros['id'];
                               this.producto = producto;
-                              console.log("ESTE ES ..>"+ producto.categoria);
+                             // console.log("ESTE ES ..>"+ producto.categoria);
                             });
                     });
-            
-            
-              }
-
+            }
 }
